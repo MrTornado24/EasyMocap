@@ -39,7 +39,6 @@ def extract_video(videoname, path, start, end, step):
 def extract_2d(openpose, image, keypoints, render):
     if not os.path.exists(keypoints):
         os.makedirs(keypoints, exist_ok=True)
-<<<<<<< HEAD
     print('image dir:', image)
     cmd = './build/examples/openpose/openpose.bin --image_dir {} --write_json {} --display 0'.format(image, keypoints)
     if args.handface:
@@ -50,17 +49,6 @@ def extract_2d(openpose, image, keypoints, render):
         cmd = cmd + ' --render_pose 0'
     os.chdir(openpose)
     os.system(cmd)
-=======
-        cmd = './build/examples/openpose/openpose.bin --image_dir {} --write_json {} --display 0'.format(image, keypoints)
-        if args.handface:
-            cmd = cmd + ' --hand --face'
-        if args.render:
-            cmd = cmd + ' --write_images {}'.format(render)
-        else:
-            cmd = cmd + ' --render_pose 0'
-        os.chdir(openpose)
-        os.system(cmd)
->>>>>>> 1feec3987e20984f179d484c99accfe95b92ce0d
 
 import json
 def read_json(path):
